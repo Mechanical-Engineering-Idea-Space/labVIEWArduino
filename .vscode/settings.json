@@ -1,0 +1,6 @@
+{
+ "files.exclude": {
+        "**/*.elf": true
+ }
+
+}

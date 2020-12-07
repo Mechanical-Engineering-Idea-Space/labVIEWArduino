@@ -1,0 +1,41 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}\\**",
+                "C:\\arduino-1.8.9\\tools\\**",
+                "C:\\arduino-1.8.9\\libraries\\**",
+                "C:\\arduino-1.8.9\\libraries\\UTFT\\**",
+                "C:\\arduino-1.8.9\\libraries\\IRComm\\**",
+                "C:\\arduino-1.8.9\\libraries\\OBD2UART\\**",
+                "C:\\arduino-1.8.9\\hardware\\arduino\\avr\\**",
+                "C:\\arduino-1.8.9\\hardware\\arduino\\avr\\cores\\arduino\\**",
+                "C:\\arduino-1.8.9\\hardware\\arduino\\avr\\libraries\\SPI\\src\\**",
+                "C:\\arduino-1.8.9\\hardware\\arduino\\avr\\libraries\\EEPROM\\src\\**",
+                "C:\\arduino-1.8.9\\hardware\\tools\\avr\\avr\\include\\**",
+                "C:\\arduino-1.8.9\\hardware\\tools\\avr\\avr\\include\\avr\\**",
+                "C:\\Users\\%USERNAME%\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.6.23\\**",
+                "C:\\Users\\%USERNAME%\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "USBCON",
+                "ARDUINO_AVR_MEGA2560",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=100"
+            ],
+            "compilerPath": "C:\\arduino-1.8.9\\hardware\\tools\\avr\\bin\\avr-gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64",
+            "forcedInclude": [
+                "C:\\arduino-1.8.9\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h",
+                "C:\\Users\\%USERNAME%\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.6.23\\cores\\arduino\\Arduino.h"
+            ]
+        }
+    ],
+    "version": 4
+}
