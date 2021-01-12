@@ -1025,7 +1025,29 @@ void loop()
   }
   else
   {
+    /* Lets do some diagnostics */
+   if (digitalRead(buttonPin2) == HIGH) { 
+     for (int p = 22; p < 54; p++) { 
+      pinMode(p,INPUT);
+      }
+      myGLCD.setFont(SmallFont);
+      myGLCD.setBackColor(VGA_PURPLE);
+      myGLCD.fillScr(VGA_PURPLE);
+      while (1==1) {
+        for (int p = 22; p < 54; p+=2) {
+          myGLCD.printNumI(digitalRead(p),(p-20)*4,10);
+          delay(10);
+          }
+        for (int p = 23; p < 54; p+=2) {
+          myGLCD.printNumI(digitalRead(p),(p-21)*4,20);
+          delay(10);
+          }
+        }
+        
+     }
+   else {
     ShowDisplay(SC_MAIN,"");
+    }
   }
 }
 //

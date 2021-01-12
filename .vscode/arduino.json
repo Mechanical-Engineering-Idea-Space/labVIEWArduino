@@ -2,6 +2,5 @@
     "board": "arduino:avr:mega",
     "configuration": "cpu=atmega2560",
     "sketch": "Firmware\\fg03.ino",
-    "port": "COM9",
-    "programmer": "ArduinoISP"
+    "port": "COM3"
 }

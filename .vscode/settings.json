@@ -1,6 +1,7 @@
 {
  "files.exclude": {
-        "**/*.elf": true
- }
+        "**/*.elf": true,
+        "**/*.hex": true
+    }
 
 }
