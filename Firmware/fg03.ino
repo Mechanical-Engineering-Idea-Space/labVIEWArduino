@@ -910,6 +910,10 @@ void setup()
   //  Setup led pin for output
   //
   pinMode(ledPin,OUTPUT);
+  pinMode(18,OUTPUT);
+  digitalWrite(18,LOW);
+  pinMode(19,INPUT_PULLUP);
+
   //
   // Initial setup
   //
@@ -925,6 +929,8 @@ void setup()
   //
   ShowDisplay(SC_MAIN, "");
 }
+
+void (* resetFunc)(void)=0;
 
 void loop()
 {
@@ -1027,13 +1033,17 @@ void loop()
   {
     /* Lets do some diagnostics */
    if (digitalRead(buttonPin2) == HIGH) { 
+     TCCR1B = TCCR1B & B11111000 | B00000001; // set timer 1 divisor to 1 for PWM frequency of 31372.55 Hz
+
+     analogWrite(PWMGain,64);
+     analogWrite(PWMOffset,192);
      for (int p = 22; p < 54; p++) { 
-      pinMode(p,INPUT);
+      pinMode(p,INPUT_PULLUP);
       }
       myGLCD.setFont(SmallFont);
       myGLCD.setBackColor(VGA_PURPLE);
       myGLCD.fillScr(VGA_PURPLE);
-      while (1==1) {
+      while (digitalRead(19)==LOW) {
         for (int p = 22; p < 54; p+=2) {
           myGLCD.printNumI(digitalRead(p),(p-20)*4,10);
           delay(10);
@@ -1042,8 +1052,10 @@ void loop()
           myGLCD.printNumI(digitalRead(p),(p-21)*4,20);
           delay(10);
           }
+        myGLCD.printNumF(4.85*analogRead(A0)/1024,2,4,30);
+        myGLCD.printNumF(4.85*analogRead(A1)/1024,2,4,40);
         }
-        
+     resetFunc();
      }
    else {
     ShowDisplay(SC_MAIN,"");
